@@ -32,9 +32,9 @@ Test this function by hand in the console to get it working, and when you think 
 
 // TODO: Write your code here
 function multiply(a,b){ //eslint-disable-line
-  var theProduct = (a * b);
+  var theProduct = a * b;
   var message = 'The product of ' + a + ' and ' + b + ' is ' + theProduct + '.';
-  return [theProduct, message];
+  return[theProduct, message];
 }
 
 // TODO: Here is the test for multiply(); uncomment it to run it
@@ -58,6 +58,7 @@ function sumAndMultiply(a,b,c){ //eslint-disable-line
   var theSum = sum(sum(a,b)[0],c)[0];
   console.log(sum(sum(a,b)[0],c)[0]);
   var theProduct = multiply(multiply(a,b)[0],c)[0];
+  console.log(multiply(multiply(a,b)[0],c)[0]);
   var sumMessage = (a + ' and ' + b + ' and ' + c + ' sum to ' + theSum + '.');
   var prodMessage = ('The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + theProduct + '.');
   return [theSum, theProduct, sumMessage, prodMessage];
