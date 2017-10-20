@@ -12,7 +12,7 @@ For TODO item, be sure to change it to say DONE when you have successfully compl
 
 // TODO: Write your code here
 function sum(a,b){ //eslint-disable-line
-  var theSum = 4 + 7;
+  var theSum = a + b;
   var message = 'The sum of ' + a + ' and ' + b + ' is ' + theSum + '.';
   return [theSum, message];
 }
@@ -58,6 +58,7 @@ function sumAndMultiply(a,b,c){ //eslint-disable-line
   var theSum = sum(sum(a,b)[0],c)[0];
   console.log(sum(sum(a,b)[0],c)[0]);
   var theProduct = multiply(multiply(a,b)[0],c)[0];
+  console.log(multiply(multiply(a,b)[0],c)[0]);
   var sumMessage = (a + ' and ' + b + ' and ' + c + ' sum to ' + theSum + '.');
   var prodMessage = ('The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + theProduct + '.');
   return [theSum, theProduct, sumMessage, prodMessage];
@@ -82,11 +83,18 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2,3,4]; //eslint-disable-line
 
 function sumArray(testArray){ //eslint-disable-line
-
+  var finalSum = 0;
+  for (var i = 0; i < testArray.length; i++) {
+    finalSum = sum(finalSum, testArray[i])[0];
+    console.log('final sum:', finalSum);
+  }
+  var sumArrayMessage = testArray + ' was passed in as an array of numbers, and ' + finalSum + ' is their sum.';
+  console.log(sumArrayMessage);
+  return [finalSum, sumArrayMessage];
 }
 
 // TODO: Here is the test for sumArray(); uncomment it to run it
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
